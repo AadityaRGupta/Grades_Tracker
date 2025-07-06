@@ -7,7 +7,7 @@ A simple web application for tracking student grades, storing course records, an
 - Calculate average grade, highest/lowest score
 - List students by GPA or course
 
-## Tech Stack
+## Technologies Used
 - Backend: Python (Flask)
 - Database: SQLite
 - Frontend: HTML/CSS
