@@ -24,7 +24,6 @@ def index():
         gpa = round(gpa, 2) if gpa is not None else 0.0
     return render_template('index.html', students=students, gpa=gpa)
 
-
 @app.route('/add', methods=['POST'])
 def add():
     name = request.form['name']
