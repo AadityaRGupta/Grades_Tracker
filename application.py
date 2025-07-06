@@ -20,7 +20,10 @@ def init_db():
 def index():
     with sqlite3.connect(DB_NAME) as conn:
         students = conn.execute("SELECT * FROM students").fetchall()
-    return render_template('index.html', students=students)
+        gpa = conn.execute("SELECT AVG(grade) FROM students").fetchone()[0]
+        gpa = round(gpa, 2) if gpa is not None else 0.0
+    return render_template('index.html', students=students, gpa=gpa)
+
 
 @app.route('/add', methods=['POST'])
 def add():
